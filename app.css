@@ -6,9 +6,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .clear {
@@ -35,18 +35,35 @@ body{
     background-image: url(https://media.giphy.com/media/xUySTGIA3OhM64Uzlu/giphy.gif);
 }
 
-h1, span#ville, span#pays, span#temperature{
-    font-size: 3em;
-    font-weight: bold;
+@media (max-width: 767px){
+    h1, span#ville, span#pays, span#temperature{
+        font-size: 2em;
+        font-weight: bold;
+    }
+    i.wi{
+        font-size: 3em;
+        line-height: 2em;
+    }
+    span#celsius{
+        font-size: 2em;
+    }
 }
 
-i.wi{
-    font-size: 5em;
-    line-height: 2em;
-}
-
-span#celsius{
-    font-size: 3em;
+@media (min-width: 768px){
+    h1, span#ville, span#temperature{
+        font-size: 3em;
+        font-weight: bold;
+    }
+    span#code, span#pays{
+        font-size: 2em;
+    }
+    i.wi{
+        font-size: 5em;
+        line-height: 2em;
+    }
+    span#celsius{
+        font-size: 3em;
+    }
 }
 
 .tooltip{

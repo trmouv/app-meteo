@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" integrity="sha512-r/Gan7PMSRovDus++vDS2Ayutc/cSdl268u047n4z+k7GYuR7Hiw71FsT3QQxdKJBVHYttOJ6IGLnlM9IoMToQ==" crossorigin="anonymous" />
 </head>
 <body>
-    <section id="app" class="flex flex-col gap-4 md:flex-row">
-        <div class="bg-gray-200 p-10 rounded-xl opacity-50 relative">
+    <section id="app" class="flex flex-col gap-0 md:gap-4 md:flex-row">
+        <div class="bg-gray-200 mb-4 md:mb-0 md:p-8 p-4 rounded-xl opacity-50 relative">
             
             <h1>
-                <span id="ville"></span>, <span id="pays"></span>
+                <span id="ville"></span>
                 <span class="tooltip">Double clic pour rechercher une autre ville, puis presser ↵</span>
             </h1>
+
+            <h2>
+                <span id="pays"></span> <span id="code"></span>
+            </h2>
 
             <h3>
                 <span id="conditions"></span>
