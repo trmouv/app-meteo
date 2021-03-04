@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Météo</title>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" integrity="sha512-r/Gan7PMSRovDus++vDS2Ayutc/cSdl268u047n4z+k7GYuR7Hiw71FsT3QQxdKJBVHYttOJ6IGLnlM9IoMToQ==" crossorigin="anonymous" />
+</head>
+<body>
+    <section id="app" class="flex flex-col gap-4 md:flex-row">
+        <div class="bg-gray-200 p-10 rounded-xl opacity-50 relative">
+            
+            <h1>
+                <span id="ville"></span>, <span id="pays"></span>
+                <span class="tooltip">Double clic pour rechercher une autre ville, puis presser ↵</span>
+            </h1>
+
+            <h3>
+                <span id="conditions"></span>
+            </h3>
+
+            <i class="wi wi-day-rain"></i>
+            
+            <h2>
+                <span id="temperature"></span><span id="celsius">°</span>
+            </h2>
+
+            <h3>
+                Min: <span id="min"></span>° Max: <span id="max"></span>°
+            </h3>
+        </div>
+        <div class="infos-plus bg-gray-200 p-4 rounded-xl opacity-50 text-left">
+            <h3>
+                Température ressentie: <span id="ressenti"></span>°
+            </h3>
+            <h3>
+                Pression atmosphérique: <span id="pression"></span> hPa
+            </h3>
+            <h3>
+                Taux d'humidité: <span id="humidite"></span> %
+            </h3>
+            <h3>
+                Visibilité: <span id="visibilite"></span> km
+            </h3>
+            <h3>
+                Vent: <span id="vent"></span> km/h <span id="direction"></span>
+            </h3>
+        </div>
+    </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>

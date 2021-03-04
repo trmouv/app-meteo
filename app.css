@@ -1,0 +1,75 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.clear {
+    background-image: url(https://media.giphy.com/media/6V4KWw6vTXgTS/giphy.gif);
+}
+
+.night-clear {
+    background-image: url(https://media.giphy.com/media/YNk9HRcH9zJfi/giphy.gif);
+}
+
+.clouds {
+    background-image: url(https://media.giphy.com/media/l41lQIclE3lItAlfq/giphy.gif);
+}
+
+.rain {
+    background-image: url(https://media.giphy.com/media/xTiIzCSjhFedORHIKQ/giphy.gif);
+}
+
+.snow {
+    background-image: url(https://media.giphy.com/media/gvKru3mU4wLFm/giphy.gif);
+}
+
+.fog{
+    background-image: url(https://media.giphy.com/media/xUySTGIA3OhM64Uzlu/giphy.gif);
+}
+
+h1, span#ville, span#pays, span#temperature{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+i.wi{
+    font-size: 5em;
+    line-height: 2em;
+}
+
+span#celsius{
+    font-size: 3em;
+}
+
+.tooltip{
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: 10px;
+    color: #fff;
+    background-color: #222;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+    transition: opacity .3s, top .5s;
+    white-space:nowrap;
+}
+
+h1:hover .tooltip{
+    top: -50px;
+    opacity: 1;
+}
+
+.infos-plus h3{
+    padding: 0.5em;
+    border-bottom: 1px #222 solid ;
+}
