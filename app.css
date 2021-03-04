@@ -6,7 +6,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
     background-position: center;
     background-size: cover;
 }
