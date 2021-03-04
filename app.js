@@ -274,6 +274,15 @@ function country2emoji(pays) {
   }))) : null;
 }
 
+// Convert UNIX Timstamp in hours:minutes
+function timeConverter(i){
+  var a = new Date(i * 1000);
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var time = hour + 'h' + min;
+  return time;
+}
+
 function conversion(deg) {
     if (deg>11.25 && deg<=33.75){
         return "↗ NNE";
@@ -320,6 +329,16 @@ const weatherIcons = {
     "Fog": "wi wi-day-fog",
 }
 
+const weatherIconsNight = {
+  "Rain": "wi wi-night-alt-rain",
+  "Clouds": "wi wi-night-alt-cloudy",
+  "Clear": "wi wi-night-clear",
+  "Snow": "wi wi-night-alt-snow",
+  "Mist": "wi wi-night-fog",
+  "Drizzle": "wi wi-night-alt-sleet",
+  "Fog": "wi wi-night-fog",
+}
+
 function capitalize(str){
     return str[0].toUpperCase() + str.slice(1);
 }
@@ -348,6 +367,8 @@ console.log(meteo)
     displayWeatherInfos(meteo)
 }
 
+let hour = new Date().getHours();
+
 function displayWeatherInfos(data){
     const name = data.name;
     const temperature = data.main.temp;
@@ -362,6 +383,10 @@ function displayWeatherInfos(data){
     const visibility = data.visibility;
     const wind = data.wind.speed;
     const deg = data.wind.deg;
+    // const timelocale = data.dt;
+    // const timezone = data.timezone;
+    // const sunrise = data.sys.sunrise;
+    // const sunset = data.sys.sunset;
 
     document.querySelector('#ville').textContent = name;
     document.querySelector('#pays').textContent = country2emoji(pays);
@@ -376,8 +401,17 @@ function displayWeatherInfos(data){
     document.querySelector('#visibilite').textContent = visibility/1000;
     document.querySelector('#vent').textContent = Math.round(wind*3.6);
     document.querySelector('#direction').textContent = conversion(deg);
+    // document.querySelector('#heure').textContent = timeConverter(timelocale+timezone);
+    // document.querySelector('#lever').textContent = timeConverter(sunrise+timezone);
+    // document.querySelector('#coucher').textContent = timeConverter(sunset+timezone);
+    
 
-    document.querySelector('i.wi').className = weatherIcons[conditions];
+    // between 7 PM and 7 AM
+    if(hour >= 19 || hour <= 7) {
+      document.querySelector('i.wi').className = weatherIconsNight[conditions];
+    } else {
+      document.querySelector('i.wi').className = weatherIcons[conditions];
+    }
 
     document.body.className = conditions.toLowerCase();
 }
